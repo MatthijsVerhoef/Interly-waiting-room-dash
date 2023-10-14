@@ -1,17 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img
+    class="background-image position-fixed top-0 start-0 w-100 z-n1"
+    alt="interly"
+    src="./assets/interly.webp"
+  />
+  <div class="image-overlay z-0" />
+  <RoomDash msg="Meeting room" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RoomDash from "./components/RoomDash.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    RoomDash,
+  },
+  data() {
+    return {
+      isAvailable: true,
+    };
+  },
+};
 </script>
 
 <style>
@@ -21,6 +31,21 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
+}
+
+.image-overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: #091c2d;
+  position: fixed;
+  z-index: 99;
+  top: 0px;
+  left: 0px;
+  opacity: 0.9;
+}
+
+.background-image {
+  object-fit: cover;
 }
 </style>
